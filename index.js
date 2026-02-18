@@ -2,11 +2,15 @@ import http from "http";
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
+import connectDB from "./Database/dbConfig.js";
 
 
 //dotenv config
 
 dotenv.config();
+
+connectDB();
+
 
 //express initialization
 
