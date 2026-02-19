@@ -23,3 +23,19 @@ export const getProducts = async (req,res) =>{
         res.status(501).json({message:"Error Get products"});
     }
 }
+
+
+//get product by id
+
+export const getProductById = async (req,res) =>{
+    try {
+        const productId = req.params.id;
+        const productDeatils = await product.findById(productId);
+        if(!productDeatils){
+            res.status(404).json({message:"Product not found"});
+        }
+        res.status(200).json({message:"Product fetched successfully",data:productDeatils});
+    } catch (error) {
+        res.status(501).json({message:"Error Get product by id"});
+    }
+}
