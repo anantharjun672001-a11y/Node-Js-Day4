@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import connectDB from "./Database/dbConfig.js";
-import productRouter from "./Routers/productRouter.js";
+import productRoute from "./Routers/productRouter.js";
 
 
 //dotenv config
@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 //custom routes
 
-app.use("/api/products",productRouter);
+app.use("/api/products",productRoute);
 
 //port
 

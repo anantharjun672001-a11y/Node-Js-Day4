@@ -12,3 +12,14 @@ export const createProduct = async (req,res) =>{
     }
 }
 
+
+//get products
+
+export const getProducts = async (req,res) =>{
+    try {
+        const getAllProducts = await product.find();
+        res.status(200).json({message:"Products fetched successfully",data:getAllProducts});
+    } catch (error) {
+        res.status(501).json({message:"Error Get products"});
+    }
+}
